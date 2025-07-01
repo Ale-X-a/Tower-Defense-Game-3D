@@ -32,7 +32,6 @@ public class ObjectPool: MonoBehaviour
         while (true)
         {
             EnableObjectsInPool();
-            Instantiate(enemyPrefab, transform);
             yield return new WaitForSeconds(spawnRate);
         }
     }
@@ -42,7 +41,7 @@ public class ObjectPool: MonoBehaviour
         for (int i = 0; i < enemyPool.Length; i++)
         {
             enemyPool[i] = Instantiate(enemyPrefab, transform);
-            enemyPool[i].SetActive(false); 
+            enemyPool[i].SetActive(false);
         }
     }
 
