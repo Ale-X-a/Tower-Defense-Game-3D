@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 3937769681006923746}
   m_Layer: 0
   m_Name: (0,0)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d40d01987cf494aa3025360f201d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlaceable: 0
+  isPlaceable: 1
   towerPrefab: {fileID: 0}
 --- !u!65 &3937769681006923746
 BoxCollider:
@@ -253,6 +253,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultColor: {r: 0.5960785, g: 0.9843138, b: 0.5960785, a: 1}
   blockedColor: {r: 0.6470588, g: 0.1647059, b: 0.1647059, a: 1}
+  exploredColor: {r: 1, g: 0.5490196, b: 0, a: 1}
+  pathColor: {r: 0.6039216, g: 0.8039216, b: 0.1960784, a: 1}
 --- !u!114 &4560540731524210528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,7 +275,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1,-3
+  m_text: 0,0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

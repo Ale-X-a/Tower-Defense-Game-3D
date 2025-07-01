@@ -9,9 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5982094841264040647}
+  - component: {fileID: 4767729089259223351}
+  - component: {fileID: 2077984630992444274}
+  - component: {fileID: 3656667718683352715}
+  - component: {fileID: 4493218949811523430}
+  - component: {fileID: 7195500934006223119}
   m_Layer: 0
   m_Name: Enemy (8)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,6 +37,95 @@ Transform:
   - {fileID: 656322320732637236}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4767729089259223351
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051879854378627472}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 6, z: 1}
+  m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!54 &2077984630992444274
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051879854378627472}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &3656667718683352715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051879854378627472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd32c7bbe077428da06c129023c1d82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldReward: 25
+  goldPenalty: 25
+--- !u!114 &4493218949811523430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051879854378627472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a752ed8da80d84abaac4a45a31425b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHitPoints: 10
+  difficultyRamp: 1
+--- !u!114 &7195500934006223119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051879854378627472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285a21a5b903442d7aec613ec4d3379f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
 --- !u!1001 &3674938136458753245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42,15 +136,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4187144168491269353, guid: db22502f7e763c441afb7962d6b19d22, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4187144168491269353, guid: db22502f7e763c441afb7962d6b19d22, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4187144168491269353, guid: db22502f7e763c441afb7962d6b19d22, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4187144168491269353, guid: db22502f7e763c441afb7962d6b19d22, type: 3}
       propertyPath: m_LocalRotation.w
@@ -88,7 +182,8 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: c9bafc3a54141bb4fa172ea4a3af3fd6, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8941486746507084546, guid: db22502f7e763c441afb7962d6b19d22, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
