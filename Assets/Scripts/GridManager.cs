@@ -6,11 +6,10 @@ public class GridManager: MonoBehaviour
     [SerializeField] Vector2Int gridSize;
     [SerializeField] Node mode;
     
-    Dictionary<Vector2Int,Node> grid = new Dictionary<Vector2Int,Node>(); // Dictionary<Vector2Int,Node> grid = new();
+    Dictionary<Vector2Int, Node> grid = new Dictionary<Vector2Int,Node>(); // Dictionary<Vector2Int,Node> grid = new();
     
     public Dictionary<Vector2Int,Node> Grid { get { return grid; } }
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Awake()
     {
