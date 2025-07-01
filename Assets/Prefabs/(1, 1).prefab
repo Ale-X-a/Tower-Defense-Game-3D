@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1942b999b32ab4f99bcdaf4976243923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultColor: {r: 0.5960785, g: 0.9843138, b: 0.5960785, a: 1}
+  blockedColor: {r: 0.6470588, g: 0.1647059, b: 0.1647059, a: 1}
 --- !u!114 &4188290060099462943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +117,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1,1
+  m_text: -5,15
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -124,8 +126,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4288215960
+  m_fontColor: {r: 0.5960785, g: 0.9843138, b: 0.5960785, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -200,7 +202,7 @@ GameObject:
   - component: {fileID: 8189606327850570778}
   - component: {fileID: 8373459010450688521}
   - component: {fileID: 5243846023066635498}
-  - component: {fileID: 1538890350177098110}
+  - component: {fileID: 5805459973512659265}
   m_Layer: 0
   m_Name: (1, 1)
   m_TagString: Untagged
@@ -237,8 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d40d01987cf494aa3025360f201d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlacable: 1
-  towerPrefab: {fileID: 100000, guid: 758bef35d3e7c74459b15b2b738f7931, type: 3}
+  isPlaceable: 1
+  towerPrefab: {fileID: 0}
 --- !u!65 &5243846023066635498
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -260,7 +262,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9, y: 9, z: 9}
   m_Center: {x: 0, y: -4.5, z: 0}
---- !u!114 &1538890350177098110
+--- !u!114 &5805459973512659265
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,6 +275,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
+  projectileParticles: {fileID: 0}
+  range: 15
 --- !u!1001 &6565560701939865614
 PrefabInstance:
   m_ObjectHideFlags: 0

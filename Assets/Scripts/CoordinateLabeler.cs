@@ -4,11 +4,15 @@ using TMPro;
 using UnityEngine;
 
 [ExecuteAlways]
-[RequireComponent(typeof(TextMeshProUGUI))]
+[RequireComponent(typeof(TextMeshPro))]
 public class CoordinateLabeler: MonoBehaviour
 {
     [SerializeField] private Color defaultColor = Color.paleGreen;
     [SerializeField] private Color blockedColor = Color.brown;
+    [SerializeField] private Color exploredColor = Color.darkOrange;
+    [SerializeField] private Color pathColor = Color.yellowGreen;
+    
+    GridManager gridManager;
 
     public Color BlockedColor
     {
@@ -22,10 +26,10 @@ public class CoordinateLabeler: MonoBehaviour
 
     void Awake()
     {
+        gridManager = FindFirstObjectByType<GridManager>();
         label = GetComponent<TextMeshPro>();
         label.enabled = false;
-        
-        waypoint = GetComponentInParent<Waypoint>();
+
         DisplayCoordinates();
     }
     
@@ -47,9 +51,9 @@ public class CoordinateLabeler: MonoBehaviour
             DisplayCoordinates();
             UpdateObjectName();
         }
-
-        ColorCoordinates();
+        
             ToggleLabels();
+            SetLabelColor();
         
     }
 
@@ -73,18 +77,27 @@ public class CoordinateLabeler: MonoBehaviour
             label.enabled = !label.IsActive();
         }
     }
-
-    void ColorCoordinates()
+    void SetLabelColor()
     {
-        { 
-            if (waypoint.IsPlaceable)
-            {
-                label.color = defaultColor;
-            }
-            else
-            {
-                label.color = blockedColor;
-            }
+        if (gridManager == null) return;
+        
+        Node node = gridManager.GetNode(coordinates);
+        
+        if (node == null) return;
+
+        if (!node.isWalkable)
+        {
+            label.color = blockedColor;
         }
+        else if (node.isPath)
+            {
+            label.color = pathColor;
+            }
+        else if (node.isExplored)
+            {
+            label.color = exploredColor;
+            }
+        
+        
     }
 }

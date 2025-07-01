@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TargetLocator : MonoBehaviour
+public class TargetLocator: MonoBehaviour
 {
     [SerializeField] private Transform weapon;
     Transform target;
@@ -9,17 +9,15 @@ public class TargetLocator : MonoBehaviour
     [SerializeField] float range = 15f;
 
     // Update is called once per frame
-    void Update()
-    {
-        FindClosestEnemy();
-        AimWeapon();
-    }
-
+    
     void AimWeapon()
     {
+        if (target == null) return;
+
         float targetDistance = Vector3.Distance(transform.position, target.position);
-        
+
         weapon.LookAt(target);
+
         if (targetDistance < range)
         {
             Attack(true);
@@ -30,6 +28,12 @@ public class TargetLocator : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        FindClosestEnemy();
+        AimWeapon();
+    }
+    
     void FindClosestEnemy()
     {
         EnemyController[] enemies = FindObjectsByType<EnemyController>(FindObjectsSortMode.None);

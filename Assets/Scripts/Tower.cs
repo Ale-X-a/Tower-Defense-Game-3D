@@ -22,13 +22,15 @@ public class Tower: MonoBehaviour
     {
         Bank bank = FindFirstObjectByType<Bank>();
         if (bank == null) return false;
-        
-        if (bank.CurrentBalance >= cost) return false;
+
+        if (bank.CurrentBalance >= cost)
         {
             Instantiate(tower, position, Quaternion.identity);
             bank.Withdraw(cost);
             return true;
         }
+
         return false;
     }
+
 }

@@ -14,7 +14,11 @@ PrefabInstance:
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 4188290060099462943, guid: 7c89a479aa2e94997bbd5ba7d24bcc4d, type: 3}
       propertyPath: m_text
-      value: 2,17
+      value: 3,16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188290060099462943, guid: 7c89a479aa2e94997bbd5ba7d24bcc4d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4188290060099462943, guid: 7c89a479aa2e94997bbd5ba7d24bcc4d, type: 3}
       propertyPath: m_fontColor.b
@@ -38,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: db6fe5b017a481740b6a70f2ea5860d5, type: 2}
     - target: {fileID: 8189606327850570778, guid: 7c89a479aa2e94997bbd5ba7d24bcc4d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -26.327091
       objectReference: {fileID: 0}
     - target: {fileID: 8189606327850570778, guid: 7c89a479aa2e94997bbd5ba7d24bcc4d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -46,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8189606327850570778, guid: 7c89a479aa2e94997bbd5ba7d24bcc4d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 120
+      value: -51.638382
       objectReference: {fileID: 0}
     - target: {fileID: 8189606327850570778, guid: 7c89a479aa2e94997bbd5ba7d24bcc4d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -80,7 +84,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: (2, 17) Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8373459010450688521, guid: 7c89a479aa2e94997bbd5ba7d24bcc4d, type: 3}
+    - {fileID: 1538890350177098110, guid: 7c89a479aa2e94997bbd5ba7d24bcc4d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

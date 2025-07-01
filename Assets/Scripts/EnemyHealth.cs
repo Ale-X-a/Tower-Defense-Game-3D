@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyHealth: MonoBehaviour
 {
-    [SerializeField] private int maxHitPoints = 5;
+    [SerializeField] private int maxHitPoints = 7;
     
     
     [Tooltip("Adds this amount to maxHitPoints when enemy dies. ")]
@@ -29,6 +29,12 @@ public class EnemyHealth: MonoBehaviour
     {
         ProcessHit();
     }
+    
+    public void TakeDamage()
+    {
+        ProcessHit();
+    }
+
     void ProcessHit()
     {
         currentHitPoints --;

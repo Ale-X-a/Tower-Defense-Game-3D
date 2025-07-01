@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1375298972319305976}
   - component: {fileID: 3714782644929046566}
   - component: {fileID: 7179973747170177544}
+  - component: {fileID: 4528749161641552317}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -93,8 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a752ed8da80d84abaac4a45a31425b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 5
-  currentHitPoints: 0
+  maxHitPoints: 8
+  difficultyRamp: 1
 --- !u!54 &3714782644929046566
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -135,7 +136,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitPoints: 5
-  currentHitPoints: 0
+  difficultyRamp: 1
+--- !u!114 &4528749161641552317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3751245581535905861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd32c7bbe077428da06c129023c1d82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldReward: 25
+  goldPenalty: 25
 --- !u!1 &8211950489163201435
 GameObject:
   m_ObjectHideFlags: 0
