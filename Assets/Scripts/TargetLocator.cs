@@ -1,18 +1,18 @@
 using UnityEngine;
 
-public class TargetLocator: MonoBehaviour
+public class TargetLocator : MonoBehaviour
 {
-    [SerializeField] private Transform weapon;
+    [SerializeField] Transform weapon;
     Transform target;
 
-    [SerializeField] private ParticleSystem projectileParticles;
+    [SerializeField] ParticleSystem projectileParticles;
     [SerializeField] float range = 15f;
 
     // Update is called once per frame
-    
+
     void AimWeapon()
     {
-        if (target == null) return;
+        //if (target == null) return;
 
         float targetDistance = Vector3.Distance(transform.position, target.position);
 
@@ -33,7 +33,7 @@ public class TargetLocator: MonoBehaviour
         FindClosestEnemy();
         AimWeapon();
     }
-    
+
     void FindClosestEnemy()
     {
         EnemyController[] enemies = FindObjectsByType<EnemyController>(FindObjectsSortMode.None);
@@ -43,7 +43,7 @@ public class TargetLocator: MonoBehaviour
         foreach (EnemyController enemy in enemies)
         {
             float targetDistance = Vector3.Distance(transform.position, enemy.transform.position);
-            
+
             if (targetDistance < maxDistance)
             {
                 closestTarget = enemy.transform;
@@ -51,7 +51,7 @@ public class TargetLocator: MonoBehaviour
             }
         }
         target = closestTarget;
-        
+
     }
 
     void Attack(bool isActive)
@@ -59,5 +59,4 @@ public class TargetLocator: MonoBehaviour
         var emissionModule = projectileParticles.emission;
         emissionModule.enabled = isActive;
     }
-    
 }
