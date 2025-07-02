@@ -23,12 +23,6 @@ public class PathFinder: MonoBehaviour
     Dictionary<Vector2Int, Node> grid = new Dictionary<Vector2Int, Node>();
     Dictionary<Vector2Int, Node> reached = new Dictionary<Vector2Int, Node>();
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        GetNewPath();
-    }
-
     void Awake()
     {
         gridManager = FindFirstObjectByType<GridManager>();
@@ -39,6 +33,15 @@ public class PathFinder: MonoBehaviour
             startNode = grid[startCoordinates];
             endNode = grid[endCoordinates];
         }
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        startNode = gridManager.Grid[startCoordinates];
+        endNode = gridManager.Grid[endCoordinates];
+
+        GetNewPath();
     }
 
     void ExploreNeighbors()
@@ -79,7 +82,6 @@ public class PathFinder: MonoBehaviour
         bool isRunning = true; //the Search is running
 
         frontier.Enqueue(startNode);
-        frontier.Enqueue(endNode);
 
         reached.Add(startCoordinates, startNode);
 
@@ -138,7 +140,7 @@ public class PathFinder: MonoBehaviour
             List<Node> newPath = GetNewPath();
 
 
-            if (newPath.Count >= 1)
+            if (newPath.Count <= 1)
             {
                 GetNewPath();
                 return true;

@@ -12,7 +12,7 @@ public class TargetLocator : MonoBehaviour
 
     void AimWeapon()
     {
-        //if (target == null) return;
+        if (target == null) return;
 
         float targetDistance = Vector3.Distance(transform.position, target.position);
 

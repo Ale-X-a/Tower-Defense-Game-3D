@@ -88,7 +88,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2324521690132046607, guid: a343afd550f2c3547babd826bc78b24a, type: 3}
       propertyPath: m_Name
-      value: (0, 0) Variant
+      value: DIRT Tile
       objectReference: {fileID: 0}
     - target: {fileID: 4282694288504566200, guid: a343afd550f2c3547babd826bc78b24a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -129,26 +129,6 @@ PrefabInstance:
     - target: {fileID: 4282694288504566200, guid: a343afd550f2c3547babd826bc78b24a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5914343001617498431, guid: a343afd550f2c3547babd826bc78b24a, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5914343001617498431, guid: a343afd550f2c3547babd826bc78b24a, type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5914343001617498431, guid: a343afd550f2c3547babd826bc78b24a, type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5914343001617498431, guid: a343afd550f2c3547babd826bc78b24a, type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5914343001617498431, guid: a343afd550f2c3547babd826bc78b24a, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

@@ -70,9 +70,9 @@ public class GridManager: MonoBehaviour
 
     {
         Vector3 position = new Vector3();
-        position.x = coordinates.x / UnityEditor.EditorSnapSettings.move.x;
-        position.z = coordinates.y / UnityEditor.EditorSnapSettings.move.z;
-        
+        position.x = coordinates.x * UnityEditor.EditorSnapSettings.move.x;
+        position.z = coordinates.y * UnityEditor.EditorSnapSettings.move.z;
+
         return position;
     }
 

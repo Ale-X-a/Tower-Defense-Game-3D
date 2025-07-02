@@ -38,11 +38,9 @@ public class EnemyController: MonoBehaviour
     IEnumerator FollowPath()
     {
         for (int i = 0; i < path.Count; i++)
-            
-        foreach (Node waypoint in path)
         {
-           // Debug.Log(waypoint.name);
-            Vector3 startPosition = transform.position; // transform.position = waypoint.transform.position;
+            //Debug.Log(waypoint.name);
+            Vector3 startPosition = transform.position;
             Vector3 endPosition = gridManager.GetPositionFromCoordinates(path[i].coordinates);
             float travelPercent = 0f;
             
@@ -50,7 +48,7 @@ public class EnemyController: MonoBehaviour
 
             while (travelPercent < 1f)
             {
-                travelPercent += Time.deltaTime * speed; //travelPercent = travelPercent + (Time.deltaTime * speed);
+                travelPercent += Time.deltaTime * speed;
                 transform.position = Vector3.Lerp(startPosition, endPosition, travelPercent);
                 yield return new WaitForEndOfFrame();
                 
