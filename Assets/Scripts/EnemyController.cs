@@ -22,9 +22,8 @@ public class EnemyController: MonoBehaviour
     }
     void OnEnable()
     {  
-        FindPath();
         ReturnToStart();
-        StartCoroutine(FollowPath());
+        RecalculatePath(true);
     
         
     }
@@ -57,11 +56,24 @@ public class EnemyController: MonoBehaviour
         FinishPath();
     }
 
-    void FindPath()
+    public void RecalculatePath(bool resetPath)
     {
+        Vector2Int coordinates = new Vector2Int();
+        if (resetPath)
+        {
+            coordinates = pathfinder.StartCoordinates;
+        }
+        else
+        {
+            coordinates = gridManager.GetCoordinatesFromPosition(transform.position);
+        }
+        
+        StopAllCoroutines(); //specify name of coroutine if implemented more //StopCoroutine(nameof(FollowPath) //Stopcoroutine(FollowPath())
+        
         path.Clear();
 
-        path = pathfinder.GetNewPath();
+        path = pathfinder.GetNewPath(coordinates);
+        StartCoroutine(FollowPath());
     }
     
     void ReturnToStart()

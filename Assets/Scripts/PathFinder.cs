@@ -71,7 +71,7 @@ public class PathFinder: MonoBehaviour
         }
     }
 
-    void BreadthFirstSearch()
+    void BreadthFirstSearch(Vector2Int coordinates)
     {
         startNode.isWalkable = true;
         endNode.isWalkable = true;
@@ -81,9 +81,9 @@ public class PathFinder: MonoBehaviour
 
         bool isRunning = true; //the Search is running
 
-        frontier.Enqueue(startNode);
+        frontier.Enqueue(grid[coordinates]);
 
-        reached.Add(startCoordinates, startNode);
+        reached.Add(coordinates, grid[coordinates]);
 
         while (frontier.Count > 0 && isRunning)
         {
@@ -122,12 +122,17 @@ public class PathFinder: MonoBehaviour
     }
 
     public List<Node> GetNewPath()
-    {
-        gridManager.ResetNodes();
-        BreadthFirstSearch();
-        return BuildPath();
+    { 
+        return GetNewPath(startCoordinates);
     }
 
+    public List<Node> GetNewPath(Vector2Int coordinates)
+    {
+        gridManager.ResetNodes();
+        BreadthFirstSearch(coordinates);
+        return BuildPath(); 
+    }
+    
     public bool WillBlockPath(Vector2Int coordinates)
     {
 
@@ -149,6 +154,12 @@ public class PathFinder: MonoBehaviour
         }
 
         return false;
+
+    }
+
+    public void NotifyReceivers()
+    {
+        BroadcastMessage(nameof(EnemyController.RecalculatePath),false, SendMessageOptions.DontRequireReceiver);
 
     }
 }
