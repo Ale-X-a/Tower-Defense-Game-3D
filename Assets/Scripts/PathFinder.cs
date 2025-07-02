@@ -141,8 +141,8 @@ public class PathFinder: MonoBehaviour
             bool previousState = grid[coordinates].isWalkable;
 
             grid[coordinates].isWalkable = false;
-            grid[coordinates].isWalkable = previousState;
             List<Node> newPath = GetNewPath();
+            grid[coordinates].isWalkable = previousState;
 
 
             if (newPath.Count <= 1)
